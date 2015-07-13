@@ -1,0 +1,23 @@
+{
+    "name": "jquery.hash",
+    "version": "1.0.0",
+    "description": "ClosureCompiler.js: Closure Compiler for node.js. The all-round carefree package.",
+    "author": "Jochem Broekhoff <broekhoff.jochem@gmail.com>",
+    "main": "jquery.hash.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jochembroekhoff/jquery.hash.git"
+    },
+    "bugs": {
+        "url": "https://github.com/jochembroekhoff/jquery.hash/issues"
+    },
+    "keywords": ["jquery", "jquery plugin", "hashing", "base64", "sha1"],
+    "dependencies": {
+        "closurecompiler": "~1.5.2"
+    },
+    "engines": {
+        "node": ">=0.8"
+    },
+    "license": "-",
+    "preferGlobal": false
+}
