@@ -1,13 +1,14 @@
 // Compile jQuery.hash
 var ClosureCompiler = require("closurecompiler");
 var fs = require('fs');
+var mkdirp = require('mkdirp');
 
 console.log("Compiling...");
 ClosureCompiler.compile(
-        ['jquery.hash.js'],
+        ['src/jquery.hash.base64_md5_sha1.js', 'src/jquery.hash.js'],
         {
-            compilation_level: "ADVANCED_OPTIMIZATIONS",
-            externs: ["jquery-2.1.4.min.js"]
+            compilation_level: "SIMPLE_OPTIMIZATIONS",
+            externs: ["src/jquery-2.1.4.min.js"]
         },
 function (error, result) {
     if (result) {
@@ -26,7 +27,7 @@ function (error, result) {
  \n\
  I don't care copyrights, but ask me before re-using or copying.\n\
  */\n" + result;
-        fs.mkdir("out");
+        mkdirp("out");
         fs.writeFile("out/jquery.hash.min.js", result, function (err) {
             if (err) {
                 console.log("Error:");

@@ -1,48 +1,47 @@
 <!doctype html>
 <html>
-<head>
-	<title>jQuery Element Hashing plugin tryout</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="./jquery.hash.js"></script>
-	<style>
-		body{
-			background-color: #c0c0c0
-		}
-		code {
-			border-radius: 2px 2px 2px 2px;
-			background-color: white;
-			padding: 4px
-		}
-	</style>
-</head>
-<body>
-	<h1>jQuery hashing</h1>
-	<textarea>Type something...</textarea>
-	<br/>
-	<button id="hash">HASH IT!</button>
-	<br/>
-	<button id="hashDocument">HASH DOCUMENT</button>
+    <head>
+        <title>jQuery Element Hashing plugin tryout</title>
+        <script src="./src/jquery-2.1.4.min.js"></script>
+        <script src="./out/jquery.hash.min.js"></script>
+        <style>
+            body{
+                background-color: #c0c0c0
+            }
+            code {
+                border-radius: 2px 2px 2px 2px;
+                background-color: white;
+                padding: 4px
+            }
+        </style>
+    </head>
+    <body>
+        <h1>jQuery hashing</h1>
+        <textarea>Type something...</textarea>
+        <br/>
+        <button id="hash">HASH IT!</button>
+        <br/>
+        <button id="hashDocument">HASH DOCUMENT</button>
 
-	<hr/> base64: <sup>could be long!</sup> <code id="b64">-</code>
-	<br/><br/> sha1: <code id="sha1">-</code>
-	<hr/> By <a href="http://jochembroekhoff.nl">Jochem Broekhoff</a>
+        <hr/> base64: <sup>could be long!</sup> <code id="b64">-</code>
+        <br/><br/> sha1: <code id="sha1">-</code>
+        <br/><br/> md5: <code id="md5">-</code>
+        <hr/> By <a href="http://jochembroekhoff.nl">Jochem Broekhoff</a>
 
-	<script>
-		$("#hash").on("click", function() {
-			var $t = $("textarea");
-			$("#b64").text($t.hash());
-			$("#sha1").text($t.hash({
-				method: "sha1"
-			}));
-		});
-		
-		$("#hashDocument").on("click", function() {
-			var $d = $("html");
-			$("#b64").text($d.hash());
-			$("#sha1").text($d.hash({
-				method: "sha1"
-			}));
-		});
-	</script>
-</body>
+        <script>
+            $("#hash").on("click", function () {
+                var $t = $("textarea");
+                $("#b64").text($t.hash({method: "base64"}));
+                $("#sha1").text($t.hash({method: "sha1"}));
+                $("#md5").text($t.hash({method: "md5"}));
+            });
+
+            $("#hashDocument").on("click", function () {
+                var $d = $("html");
+                $("#b64").text($d.hash({method: "base64"}));
+                $("#sha1").text($d.hash({method: "sha1"}));
+                $("#md5").text($d.hash({method: "md5"}));
+            });
+        </script>
+    </body>
 </html>
