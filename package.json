@@ -14,7 +14,8 @@
     "keywords": ["jquery", "jquery plugin", "hashing", "base64", "sha1"],
     "dependencies": {
         "closurecompiler": "~1.5.2",
-        "mkdirp": "~0.5.1"
+        "mkdirp": "~0.5.1",
+        "archiver": "~0.14.0"
     },
     "engines": {
         "node": ">=0.8"

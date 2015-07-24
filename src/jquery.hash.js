@@ -4,6 +4,7 @@
  Easy hash HTML elements.
  Currently supporting this hashing methods:
  - base64
+ - md5
  - sha1
  
  By Jochem Broekhoff, at my birthday 2015.
